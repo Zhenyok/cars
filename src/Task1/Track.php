@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace App\Task1;
 
+/**
+ * Class Track
+ * @package App\Task1
+ */
 class Track
 {
     /**
