@@ -10,6 +10,9 @@ namespace App\Task1;
  */
 class Track
 {
+
+    const SECONDS_IN_MINUTE = 60;
+
     /**
      * @var float
      */
@@ -78,9 +81,9 @@ class Track
 
         foreach ($this->all() as $k => $car) {
             $trackLength = $this->lapsNumber * $this->lapLength;
-            $travelTime = round($trackLength / $car->getSpeed(), 3) * 60;
+            $travelTime = round($trackLength / $car->getSpeed(), 3) * self::SECONDS_IN_MINUTE;
             $countPitStop = ceil($trackLength / ($car->getFuelTankVolume() / $car->getFuelConsumption() * 100));
-            $travelTime += $countPitStop * $car->getPitStopTime() / 60;
+            $travelTime += $countPitStop * $car->getPitStopTime() / self::SECONDS_IN_MINUTE;
             $car->setSpendTime($travelTime);
 
             if (is_null($winner) || $winner->getSpendTime() > $car->getSpendTime()) {
