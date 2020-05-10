@@ -6,6 +6,56 @@ namespace App\Task1;
 
 class Car
 {
+    /**
+     * @var int
+     */
+    private int $id;
+
+    /**
+     * @var string
+     */
+    private string $image;
+
+    /**
+     * @var string
+     */
+    private string $name;
+
+    /**
+     * @var int
+     */
+    private int $speed;
+
+    /**
+     * @var int
+     */
+    private int $pitStopTime;
+
+    /**
+     * @var float
+     */
+    private float $fuelConsumption;
+
+    /**
+     * @var float
+     */
+    private float $fuelTankVolume;
+
+    /**
+     * @var float
+     */
+    public float $spendTime;
+
+    /**
+     * Car constructor.
+     * @param int $id
+     * @param string $image
+     * @param string $name
+     * @param int $speed
+     * @param int $pitStopTime
+     * @param float $fuelConsumption
+     * @param float $fuelTankVolume
+     */
     public function __construct(
         int $id,
         string $image,
@@ -15,41 +65,84 @@ class Car
         float $fuelConsumption,
         float $fuelTankVolume
     ) {
-        //@todo
+        $this->id = $id;
+        $this->image = $image;
+        $this->name = $name;
+        $this->speed = $speed;
+        $this->pitStopTime = $pitStopTime;
+        $this->fuelConsumption = $fuelConsumption;
+        $this->fuelTankVolume = $fuelTankVolume;
     }
 
+    /**
+     * @return int
+     */
     public function getId(): int
     {
-        // @todo
+        return $this->id;
     }
 
+    /**
+     * @return string
+     */
     public function getImage(): string
     {
-        // @todo
+        return $this->image;
     }
 
+    /**
+     * @return string
+     */
     public function getName(): string
     {
-        // @todo
+        return $this->name;
     }
 
+    /**
+     * @return int
+     */
     public function getSpeed(): int
     {
-        // @todo
+        return $this->speed;
     }
 
+    /**
+     * @return int
+     */
     public function getPitStopTime(): int
     {
-        // @todo
+        return $this->pitStopTime;
     }
 
+    /**
+     * @return float
+     */
     public function getFuelConsumption(): float
     {
-        // @todo
+        return $this->fuelConsumption;
     }
 
+    /**
+     * @return float
+     */
     public function getFuelTankVolume(): float
     {
-        // @todo
+        return $this->fuelTankVolume;
+    }
+
+    /**
+     * @param float $time
+     */
+    public function setSpendTime(float $time)
+    {
+        $this->spendTime = $time;
+    }
+
+    /**
+     * @return float
+     */
+    public function getSpendTime(): float
+    {
+        return $this->spendTime;
     }
 }
