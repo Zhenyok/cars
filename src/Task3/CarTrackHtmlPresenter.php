@@ -15,11 +15,7 @@ class CarTrackHtmlPresenter
 
         foreach ($track->all() as $car) {
             $html .= '<li style="margin: 10px">';
-            $html .= '<h3> Modal: ' . $car->getName() .
-                    '<br> Speed: ' . $car->getSpeed() .
-                    '<br> Consumption: ' . $car->getFuelConsumption() .
-                    '<br> Tank: ' . $car->getFuelTankVolume().
-                '</h3>';
+            $html .= '<h2>'.$car->getName().': '.$car->getSpeed().', '. $car->getFuelConsumption() . ' </h2>';
             $html .= '<img src="' . $car->getImage() . '">';
             $html .= '</li>';
         }
@@ -27,8 +23,7 @@ class CarTrackHtmlPresenter
         $html .= '</ol><br>';
         $html .= '<h2 style="text-align: center">Winner</h2>';
         $winner = $track->run();
-        $html .= '<h2 style="text-align: center">' . $winner->getName() . '</h2>';
-        $html .= '<div style="text-align: center"><img src="' . $winner->getImage() . '"></div>';
+        $html .= '<div style="text-align: center"><h1 style="color: tomato">' . $winner->getName() . '</h1></div>';
 
         return $html;
     }
